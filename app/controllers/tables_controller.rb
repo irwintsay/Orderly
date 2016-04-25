@@ -30,10 +30,6 @@ class TablesController < ApplicationController
     @total_bill = @tax_bill + @sub_total
   end
 
-  def update
-
-  end
-
   private
 
   def table_params

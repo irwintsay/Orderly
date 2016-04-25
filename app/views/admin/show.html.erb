@@ -1,0 +1,25 @@
+<%= form_for @item do |f| %>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label 'Item' %>
+    <%= f.text_field :name %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label :price %>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.button 'Edit Item', class: "red darken-1 btn" %>
+  </div>
+</div>
+<% end %>

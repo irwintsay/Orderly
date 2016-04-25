@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:new, :create]
-  resources :tables
+  resources :tables, only: [:new, :create, :show]
   resources :customers, only: [:create, :show]
   resources :orders, only: [:create, :destroy]
   resources :items
+  resources :admin
 
   # Custom routes
   get '/index' => 'welcome#index', as: :log_in

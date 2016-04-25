@@ -1,0 +1,58 @@
+
+<!-- Form for new menu item -->
+<div class="row">
+  <div class="col s12 center">
+    <h3>Create Menu Item</h3>
+  </div>
+</div>
+
+<%= form_for @new_item do |f| %>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label 'Item' %>
+    <%= f.text_field :name %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label :price %>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+</div>
+<div class="row">
+  <div class="input-field col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+</div>
+<div class="row">
+  <div class="col s12 m8 offset-m2 l6 offset-l3">
+    <%= f.button 'Add New Item', class: "red darken-1 btn"%>
+  </div>
+</div>
+<% end %>
+
+<div class="row">
+  <div class="col s12">
+    <h2>Current Menu</h2>
+      <% @items.each_with_index do |item, index| %>
+        <% if index % 2 == 0 %>
+        <div class="row">
+          <div class="col s6 m6 l6">
+            <h4><%= link_to item.name, "/admin/#{item.id}", class: "red darken-1 white-text" %></h4>
+            <h5>Price: <%= number_to_currency(item.price) %></h5>
+            <h5><%= item.description %></h5>
+            <%= link_to 'Delete Item', item_path(item.id), method: :delete, class: "black btn" %>
+          </div>
+        <% else %>
+          <div class="col s6 m6 l6">
+            <h4><%= link_to item.name, "/admin/#{item.id}", class: "red darken-1 white-text" %></h4>
+            <h5>Price: <%= number_to_currency(item.price) %></h5>
+            <h5><%= item.description %></h5>
+            <%= link_to 'Delete Item', item_path(item.id), method: :delete, class: "black btn" %>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+</div>

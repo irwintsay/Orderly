@@ -22,4 +22,8 @@ function setReceiptHandler() {
   $('#view-receipt').click(function() {
     $('#modal-receipt').toggle();
   });
+
+  $('#close-modal').click(function() {
+    $('#modal-receipt').toggle();
+  });
 }
