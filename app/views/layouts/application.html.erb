@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RestaurantAPP</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="main" class="container grey lighten-2">
+    <div class="navigation row">
+      <div class="col right">
+        <ul>
+          <li><%= link_to "Home", profile_path, { method: :get, class: "red darken-1 btn waves-effect" } %></li>
+          <% if session[:user_id] %>
+          <li><%= link_to "Sign out", delete_session_path, { method: :delete, class: "red darken-1 btn waves-effect" } %></li>
+          <% else %>
+          <li><%= button_to "Sign in", '/', { method: :get, class: "red darken-1 btn waves-effect" } %></li>
+          <% end %>
+          <li><%= link_to "Sign up", '/users/new', { method: :get, class: "red darken-1 btn waves-effect" } %></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="header row">
+      <div class="col s12 center">
+        <h1 class="title">Order.<span class="red-text text-darken-1">ly</span></h1>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <%= yield %>
+
+    </div>
+  </div>
+
+  <footer class="container page-footer red darken-1">
+    <div class="row">
+      <div class="footer-stuff col s12 m12 l12">
+        <h5><span class="title2">Order.<span class="white-text">ly</span></span></h5>
+        <h6 class="black-text"> - Making the world a better place by revolutionizing point of sales data aggregation with fault tolerant, distributed, cloud-based acid transactions </h6>
+      </div>
+    </div>
+    <div class="footer-copyright white-text">
+      Copyright 2016 - All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>
