@@ -29,6 +29,12 @@ Customer.create({name: 'Alex', table: Table.all.sample})
 Customer.create({name: 'Kasia', table: Table.all.sample})
 Customer.create({name: 'Samantha', table: Table.all.sample})
 
+Table.create()
+Table.create()
+Table.create()
+Table.create()
+Table.create()
+
 Item.create({name: 'Pizza', description: 'Pepperoni', price: 4.99})
 Item.create({name: 'Hamburger', description: 'Bacon and Cheese', price: 7.99})
 Item.create({name: 'Hotdog', description: 'With mustard and ketchup', price: 3.99})
