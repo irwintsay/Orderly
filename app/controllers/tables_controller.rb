@@ -7,7 +7,7 @@ class TablesController < ApplicationController
   end
 
   def create
-    table = Table.create user_id: current_user.id
+    table = Table.create
     redirect_to profile_path
   end
 
@@ -31,7 +31,7 @@ class TablesController < ApplicationController
   end
 
   def update
-    
+
   end
 
   private
