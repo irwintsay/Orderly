@@ -16,7 +16,7 @@
       </div>
     </div>
     <!-- End of Page Navigation -->
-    
+
     <% if @orders %>
       <% @orders.each do |order| %>
       <div class="card">
@@ -25,7 +25,8 @@
 
           <%= form_tag "/orders/#{order.id}", method: :delete do %>
             <%= hidden_field_tag :customer_id, order.customer.id %>
-            <%= button_tag "#{ order.item.name } : $#{ order.item.price }", class: 'red lighten-1 btn-large' %>
+            <!-- <%= button_tag "#{ order.item.name } : $#{ order.item.price }", class: 'red lighten-1 btn-large' %> -->
+            <%= button_tag 'Remove', class: 'red lighten-1 btn-large' %>
           <% end %>
 
         </div>
@@ -42,8 +43,8 @@
         <%= form_tag '/orders', method: :post do %>
           <%= hidden_field_tag :customer_id, @customer.id %>
           <%= hidden_field_tag :item_id, item.id %>
-          <%= button_tag "#{ item.name } : $#{ item.price }", class: 'red lighten-1 btn-large' %>
-          <!-- <%= submit_tag 'Add Item' %> -->
+          <!-- <%= button_tag "#{ item.name } : $#{ item.price }", class: 'red lighten-1 btn-large' %> -->
+          <%= button_tag 'Add Item', class: 'red lighten-1 btn-large' %>
         <% end %>
 
       </div>
