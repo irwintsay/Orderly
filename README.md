@@ -5,6 +5,10 @@ Welcome to Order.ly, a full stack point of sales waiter application built with R
 The goal of this project was to create a mobile friendly, Point-of-Sale application for Waiters/Hosts. Design and styling took a backseat to making functionality easy to use on a small device such as a smartphone or tablet.
 
 
+## IMPORTANT
+
+I worked in a different repo for 95% of the project before I had to migrate all of the files into a new repo so that I could successfully push my project up to Heroku. That means you probably can't see any commits from the majority of the projects development. They should still be available in the old repo. Let me know if this is a problem.
+
 ### Using Order.ly
 
 Using Order.ly is fairly simple. All of the views occur in a linear fashion. The server either creates a new account or signs into an existing account with username and password credentials.
