@@ -31,6 +31,8 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
 gem 'faker'
 
+gem 'figaro'
+
 group :production do
 
   gem 'rails_12factor'
